@@ -21,6 +21,7 @@ var tileImages = []; // main container for game images
       playLockout = false;
       startButton.style.display = 'none';
       splash.style.display = 'none'
+      scoreE.innerHTML = "Score: 0"
       
       if (!gamePlay) {
         gamePlay = true;
@@ -28,7 +29,7 @@ var tileImages = []; // main container for game images
         tileArray = tileImages.concat(tileImages);
         shuffleArray(tileArray);
         buildBoard();
-        message.innerHTML = "Click any tile";
+        message.innerHTML = "Click on any sad cat";
       }
     }
 
@@ -53,7 +54,7 @@ var tileImages = []; // main container for game images
           playLockout = true;
           if (checkSrc(tileFlippedOver[tileFlippedOver.length - 1]) == checkSrc(tileFlippedOver[tileFlippedOver.length - 2])) {
             score++;
-            message.innerHTML = "Match Found.  Click more tiles";
+            message.innerHTML = "<span class='green-text'>Match Found. </span> Click more tiles";
             scoreE.innerHTML = "Score: "+score;
             
             playLockout = false;
@@ -80,12 +81,16 @@ var tileImages = []; // main container for game images
       clearInterval(timer);
       playLockout = false;
       cardFlipped = -1;
-      message.innerHTML = "Click any tile";
+      message.innerHTML = "Click any cat";
     }
 
     function gameover() {
+      if(score == 6){
       startButton.style.display = 'block';
-      document.getElementById('restart').style.display = "block"
+      message.innerHTML= '<br><button id="restart" onclick="restartGame()" class="waves-effect waves-light btn orange darken-1">click to start new game</button>'
+      }else{
+          alert("Nice try cheater :)")
+      }
     }
 
     function restartGame(){
