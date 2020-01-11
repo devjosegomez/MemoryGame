@@ -1,0 +1,31 @@
+#score{
+    font-size: 20px;
+    color: green;
+}
+
+.gameTile{
+    border-radius: 0px !important;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 10px !important;
+}
+
+img{
+    border-radius: 5px;
+}
+
+#splash{
+
+}
+
+#restart{
+    display: none;
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+  }
